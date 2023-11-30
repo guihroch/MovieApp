@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import com.example.movieapp.activities.CadastroPage
+import com.example.movieapp.activities.HomePage
 import com.example.movieapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         window.statusBarColor = Color.parseColor("#FF000000")
 
+        autenticacaoUsuario()
+
         binding.toCadastroPage.setOnClickListener {
             val intent = Intent(this, CadastroPage::class.java)
             startActivity(intent)
@@ -29,11 +32,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun autenticacaoUsuario(){
-        binding.buttonLogin.visibility = View.GONE
+        val intent = Intent(this, HomePage::class.java)
+        startActivity(intent)
+       /* binding.buttonLogin.visibility = View.GONE
         binding.containerProgressbarLogin.visibility = View.VISIBLE
         Handler(Looper.getMainLooper()).postDelayed({
             binding.buttonLogin.visibility = View.VISIBLE
             binding.containerProgressbarLogin.visibility = View.GONE
         }, 2000)
-    }
+   */ }
 }

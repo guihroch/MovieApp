@@ -24,10 +24,12 @@
 
     <TextView
         android:id="@+id/text_informe_email"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Informe seu email para podermos continuar"
         android:visibility="visible"
         android:textSize="14sp"
@@ -35,19 +37,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_cadastrar" />
 
-    <TextView
-        android:id="@+id/text_finalize_seu_cadastro"
-        android:layout_marginTop="20dp"
-        android:visibility="invisible"
-        android:layout_marginHorizontal="20dp"
-        android:text="Finalize seu cadastro informando a senha e clique no botão de cadastrar"
-        android:gravity="center"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_cadastrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
 
     <TextView
@@ -66,14 +55,19 @@
         style="@style/Background_text_input_layout"
         android:layout_marginTop="10dp"
         app:helperTextEnabled="true"
+        app:helperTextTextColor="#DD4247"
+        app:boxStrokeErrorColor="#DD4247"
+        app:boxStrokeWidth="1dp"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:maxLines="1"
+            android:id="@+id/edit_email"
             style="@style/Background_text_input_edit_text"
-            android:background="@drawable/background_edit_text" />
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -92,13 +86,20 @@
         style="@style/Background_text_input_layout"
         android:layout_marginTop="10dp"
         android:visibility="gone"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="#DD4247"
+        app:boxStrokeErrorColor="#DD4247"
+        app:boxStrokeWidth="1dp"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_senha">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:maxLines="1"
+android:id="@+id/edit_senha"
             style="@style/Background_text_input_edit_text"
-            android:background="@drawable/background_edit_text" />
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
