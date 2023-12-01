@@ -11,7 +11,7 @@ import com.example.movieapp.model.Categoria
 
 class AdapterCategoria(
     private val context: Context,
-     val listaCategoria: MutableList<Categoria>
+    val listaCategoria: MutableList<Categoria>
 ) : RecyclerView.Adapter<AdapterCategoria.CategoriaViewHolder>() {
 
 
@@ -29,7 +29,8 @@ class AdapterCategoria(
 
 
         holder.recyclerViewFilmes.adapter = AdapterFilme(context, listaCategoria[position].filme)
-        holder.recyclerViewFilmes.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        holder.recyclerViewFilmes.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
     }
 
     inner class CategoriaViewHolder(binding: ItemCategoriaBinding) :

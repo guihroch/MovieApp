@@ -16,8 +16,8 @@
         android:text="Erro ao realizar cadastro!"
         android:textColor="#DD4247"
         android:layout_gravity="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:textSize="14sp"
+
         android:paddingVertical="10dp"
         android:paddingEnd="10dp"
         android:layout_marginStart="5dp"

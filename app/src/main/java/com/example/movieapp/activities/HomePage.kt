@@ -11,6 +11,7 @@ import com.example.movieapp.api.RetrofitService
 import com.example.movieapp.databinding.ActivityHomePageBinding
 import com.example.movieapp.model.Categoria
 import com.example.movieapp.model.Categorias
+import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,26 +30,26 @@ class HomePage : AppCompatActivity() {
 
         window.statusBarColor = Color.parseColor("#FF000000")
 
-        //Configurando RecyclerView
-        val recyclerViewCategoria = binding.recyclerViewFilmes
-        recyclerViewCategoria.setHasFixedSize(true)
-        recyclerViewCategoria.layoutManager = LinearLayoutManager(this)
-        adapterCategoria = AdapterCategoria(this, listaCategoria)
-        recyclerViewCategoria.adapter = adapterCategoria
+        getMovies()
+        recyclerViewConfig()
 
-        //Criar uma lista horizontal que ficará dentro da lista vertical(Categoria)
 
-        //Configurar Retrofit
+
+
+    }
+
+    private fun getMovies() {
+        //Config Retrofit
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://stackmobile.com.br/")
             .build()
             .create(RetrofitService::class.java)
 
-        retrofit.listaCategorias().enqueue(object: Callback<Categorias>{
+        retrofit.listaCategorias().enqueue(object : Callback<Categorias> {
             @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<Categorias>, response: Response<Categorias>) {
-                if (response.code() == 200){
+                if (response.code() == 200) {
                     response.body().let {
                         adapterCategoria.listaCategoria.addAll(it!!.categoria)
                         adapterCategoria.notifyDataSetChanged()
@@ -62,9 +63,17 @@ class HomePage : AppCompatActivity() {
 
             }
         })
-
-
     }
+
+    private fun recyclerViewConfig() {
+        val recyclerViewCategoria = binding.recyclerViewFilmes
+        recyclerViewCategoria.setHasFixedSize(true)
+        recyclerViewCategoria.layoutManager = LinearLayoutManager(this)
+        adapterCategoria = AdapterCategoria(this, listaCategoria)
+        recyclerViewCategoria.adapter = adapterCategoria
+        getMovies()
+    }
+
 
 
 }

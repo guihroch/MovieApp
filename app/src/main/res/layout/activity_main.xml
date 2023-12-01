@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_email"
             style="@style/Background_text_input_edit_text"
             android:background="@drawable/background_edit_text"
             android:hint="Email" />
@@ -43,6 +44,7 @@
         app:layout_constraintTop_toBottomOf="@id/edit_text_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_senha"
             style="@style/Background_text_input_edit_text"
             android:background="@drawable/background_edit_text"
             android:hint="Senha" />

@@ -13,9 +13,14 @@ import androidx.core.view.isEmpty
 import com.example.movieapp.MainActivity
 import com.example.movieapp.R
 import com.example.movieapp.databinding.ActivityCadastroPageBinding
+import com.google.firebase.FirebaseNetworkException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 class CadastroPage : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroPageBinding
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityCadastroPageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -25,23 +30,13 @@ class CadastroPage : AppCompatActivity() {
         binding.buttonContinuar.setOnClickListener {
             validarEmailCadastro()
         }
-
         binding.buttonCadastrar.setOnClickListener {
-            //Finalizar com toast customizada
-            //Retornar automaticamente para a loginPage
-         autenticarCadastro()
+            cadastroFirebase()
         }
 
 
     }
 
-    private fun logicaProgressBarCadastro() {
-        binding.textInformeEmail.text = "Finalize seu cadastro informando a senha e clique no botão de cadastrar"
-        binding.textSenha.visibility = View.VISIBLE
-        binding.editTextSenha.visibility = View.VISIBLE
-        binding.buttonContinuar.visibility = View.GONE
-        binding.buttonCadastrar.visibility = View.VISIBLE
-    }
 
     private fun toLoginPage() {
         val intent = Intent(this, MainActivity::class.java)
@@ -75,28 +70,64 @@ class CadastroPage : AppCompatActivity() {
             Handler(Looper.getMainLooper()).postDelayed({
                 binding.editTextEmail.helperText = ""
                 binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")
-            },2000)
-        } else {
-            logicaProgressBarCadastro()
-        }
-    }
-
-    private fun autenticarCadastro(){
-        val senha = binding.editSenha.text.toString()
-        if (senha.isEmpty()){
-            binding.editTextSenha.helperText = "Senha é obrigatório"
-            binding.editTextSenha.boxStrokeColor = Color.parseColor("#DD4247")
-
-
-        } else {
-            binding.containerProgressbar.visibility = View.VISIBLE
-            binding.buttonCadastrar.visibility = View.GONE
-            Handler(Looper.getMainLooper()).postDelayed({
-                binding.containerProgressbar.visibility = View.GONE
-                binding.buttonCadastrar.visibility = View.VISIBLE
-                toastSucesso()
             }, 2000)
+        } else {
+            binding.textInformeEmail.text =
+                "Finalize seu cadastro informando a senha e clique no botão de cadastrar"
+            binding.textSenha.visibility = View.VISIBLE
+            binding.editTextSenha.visibility = View.VISIBLE
+            binding.buttonContinuar.visibility = View.GONE
+            binding.buttonCadastrar.visibility = View.VISIBLE
         }
     }
 
+
+    private fun cadastroFirebase() {
+        val emailCadastro = binding.editEmail.text.toString()
+        val senhaCadastro = binding.editSenha.text.toString()
+        auth = FirebaseAuth.getInstance()
+        auth.createUserWithEmailAndPassword(emailCadastro, senhaCadastro)
+            .addOnCompleteListener { cadastro ->
+                if (cadastro.isSuccessful) {
+                    binding.containerProgressbar.visibility = View.VISIBLE
+                    binding.buttonCadastrar.visibility = View.GONE
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        binding.containerProgressbar.visibility = View.GONE
+                        binding.buttonCadastrar.visibility = View.VISIBLE
+                        toastSucesso()
+                    }, 2000)
+                }
+            }.addOnFailureListener {
+                val erro = it
+                when {
+                    erro is FirebaseAuthWeakPasswordException -> {
+                        binding.editTextSenha.helperText =
+                            "A senha deve ter pelo menos 6 caracteres"
+                        binding.editTextSenha.boxStrokeColor = Color.parseColor("#DD4247")
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            binding.editTextSenha.helperText = ""
+                            binding.editTextSenha.boxStrokeColor = Color.parseColor("#171515")
+                        }, 2000)
+                    }
+
+                    erro is FirebaseAuthUserCollisionException -> {
+                        binding.editTextEmail.helperText = "Este usuário ja foi cadastrado!"
+                        binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            binding.editTextEmail.helperText = ""
+                            binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")
+                        }, 2000)
+                    }
+
+                    erro is FirebaseNetworkException -> {
+                        Toast.makeText(this, "Sem conexão com a internet", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+                    else -> {
+                        customToastError()
+                    }
+                }
+            }
+    }
 }
