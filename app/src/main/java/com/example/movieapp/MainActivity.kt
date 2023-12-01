@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val intent = Intent(this, HomePage::class.java)
+        startActivity(intent)
+
         window.statusBarColor = Color.parseColor("#FF000000")
 
 
@@ -37,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun autenticarUsuario(email: String, senha: String) {
-        /* auth = FirebaseAuth.getInstance()
+         auth = FirebaseAuth.getInstance()
         auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { login ->
             if (login.isSuccessful){
 
@@ -54,7 +57,6 @@ class MainActivity : AppCompatActivity() {
             binding.containerProgressbarLogin.visibility = View.GONE
         }, 2000)
    */ }
-   */
+
 
     }
-}

@@ -31,7 +31,11 @@ class CadastroPage : AppCompatActivity() {
             validarEmailCadastro()
         }
         binding.buttonCadastrar.setOnClickListener {
-            cadastroFirebase()
+        cadastroFirebase()
+        }
+
+        binding.icArrowBackLoginPage.setOnClickListener {
+            toLoginPage()
         }
 
 
@@ -64,24 +68,39 @@ class CadastroPage : AppCompatActivity() {
 
     private fun validarEmailCadastro() {
         val email = binding.editEmail.text.toString()
-        if (email.isEmpty()) {
-            binding.editTextEmail.helperText = "Email é obrigatório"
-            binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
-            Handler(Looper.getMainLooper()).postDelayed({
-                binding.editTextEmail.helperText = ""
-                binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")
-            }, 2000)
-        } else {
-            binding.textInformeEmail.text =
-                "Finalize seu cadastro informando a senha e clique no botão de cadastrar"
-            binding.textSenha.visibility = View.VISIBLE
-            binding.editTextSenha.visibility = View.VISIBLE
-            binding.buttonContinuar.visibility = View.GONE
-            binding.buttonCadastrar.visibility = View.VISIBLE
+        val emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$"
+
+        when {
+            email.isEmpty() -> {
+                binding.editTextEmail.helperText = "Email é obrigatório"
+                binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
+                Handler(Looper.getMainLooper()).postDelayed({
+                    binding.editTextEmail.helperText = ""
+                    binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")
+                }, 2000)
+            }
+
+            !email.matches(emailRegex.toRegex()) -> {
+                binding.editTextEmail.helperText = "Digite um email válido"
+                binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
+                Handler(Looper.getMainLooper()).postDelayed({
+                    binding.editTextEmail.helperText = ""
+                    binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")
+                }, 2000)
+
+            }
+            else -> {
+                binding.textInformeEmail.text =
+                    "Finalize seu cadastro informando a senha e clique no botão de cadastrar"
+                binding.textSenha.visibility = View.VISIBLE
+                binding.editTextSenha.visibility = View.VISIBLE
+                binding.buttonContinuar.visibility = View.GONE
+                binding.buttonCadastrar.visibility = View.VISIBLE
+            }
         }
+
+
     }
-
-
     private fun cadastroFirebase() {
         val emailCadastro = binding.editEmail.text.toString()
         val senhaCadastro = binding.editSenha.text.toString()

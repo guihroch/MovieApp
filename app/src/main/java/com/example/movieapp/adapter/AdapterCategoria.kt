@@ -26,11 +26,10 @@ class AdapterCategoria(
 
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
         holder.categoria.text = listaCategoria[position].titulo
-
-
         holder.recyclerViewFilmes.adapter = AdapterFilme(context, listaCategoria[position].filme)
         holder.recyclerViewFilmes.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
     }
 
     inner class CategoriaViewHolder(binding: ItemCategoriaBinding) :

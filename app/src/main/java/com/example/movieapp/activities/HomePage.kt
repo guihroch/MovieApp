@@ -1,10 +1,13 @@
 package com.example.movieapp.activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.movieapp.MainActivity
 import com.example.movieapp.R
 import com.example.movieapp.adapter.AdapterCategoria
 import com.example.movieapp.api.RetrofitService
@@ -32,7 +35,9 @@ class HomePage : AppCompatActivity() {
 
         getMovies()
         recyclerViewConfig()
-
+        binding.iconLogout.setOnClickListener {
+            logout()
+        }
 
 
 
@@ -55,6 +60,7 @@ class HomePage : AppCompatActivity() {
                         adapterCategoria.notifyDataSetChanged()
 
                     }
+                    binding.containerLoading.visibility = View.GONE
                 }
 
             }
@@ -71,9 +77,13 @@ class HomePage : AppCompatActivity() {
         recyclerViewCategoria.layoutManager = LinearLayoutManager(this)
         adapterCategoria = AdapterCategoria(this, listaCategoria)
         recyclerViewCategoria.adapter = adapterCategoria
-        getMovies()
     }
 
+    private fun logout(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
 
 }
