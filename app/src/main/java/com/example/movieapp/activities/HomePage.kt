@@ -23,12 +23,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 class HomePage : AppCompatActivity() {
-    private lateinit var binding: ActivityHomePageBinding
+    private val binding by lazy {
+        ActivityHomePageBinding.inflate(layoutInflater)
+    }
     private lateinit var adapterCategoria: AdapterCategoria
     private val listaCategoria: MutableList<Categoria> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         window.statusBarColor = Color.parseColor("#FF000000")

@@ -20,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val intent = Intent(this, HomePage::class.java)
-        startActivity(intent)
+
 
         window.statusBarColor = Color.parseColor("#FF000000")
 
@@ -43,7 +42,8 @@ class MainActivity : AppCompatActivity() {
          auth = FirebaseAuth.getInstance()
         auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { login ->
             if (login.isSuccessful){
-
+                val intent = Intent(this, HomePage::class.java)
+                startActivity(intent)
             } else {
 
             }
