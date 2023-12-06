@@ -13,7 +13,8 @@
 
 ⭐ Esse é um projeto para demonstrar meu conhecimento técnico no desenvolvimento Android nativo com Kotlin. Mais informações técnicas abaixo.
 
-DESCRIÇÃO DO PROJETO FOCADA NAS FEATURES (FUNCIONALIDADES). VOCÊ ESTA VENDENDO SUAS HABILIDADES, NÃO A IDEIA DO SEU APP!
+🎥 Aplicativo com diversas opções e categorias diferentes de filmes, possuindo cadastro e autenticação de usuário.
+
 
 </p>
 
