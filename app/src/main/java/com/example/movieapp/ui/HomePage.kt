@@ -1,45 +1,44 @@
-package com.example.movieapp.activities
+package com.example.movieapp.ui
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.movieapp.MainActivity
-import com.example.movieapp.R
 import com.example.movieapp.adapter.AdapterCategoria
 import com.example.movieapp.api.RetrofitService
 import com.example.movieapp.databinding.ActivityHomePageBinding
 import com.example.movieapp.model.Categoria
 import com.example.movieapp.model.Categorias
-import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class HomePage : AppCompatActivity() {
-    private val binding by lazy {
-        ActivityHomePageBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: ActivityHomePageBinding
     private lateinit var adapterCategoria: AdapterCategoria
     private val listaCategoria: MutableList<Categoria> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         window.statusBarColor = Color.parseColor("#FF000000")
 
         getMovies()
-        recyclerViewConfig()
-        binding.iconLogout.setOnClickListener {
-            logout()
-        }
 
+        recyclerViewConfig()
+
+        binding.iconLogout.setOnClickListener {
+            alertDialogLogout()
+        }
 
 
     }
@@ -80,10 +79,20 @@ class HomePage : AppCompatActivity() {
         recyclerViewCategoria.adapter = adapterCategoria
     }
 
-    private fun logout(){
+    private fun logout() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun alertDialogLogout(){
+        AlertDialog.Builder(this)
+            .setTitle("Logout")
+            .setMessage("Deseja realmente sair?")
+            .setPositiveButton("NÃO", DialogInterface.OnClickListener { dialog, id ->  })
+            .setNegativeButton("SIM", DialogInterface.OnClickListener { dialog, id -> logout() })
+            .create()
+            .show()
     }
 
 

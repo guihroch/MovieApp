@@ -5,23 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_black"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Login"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:textColor="@color/dark_blue"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/text_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/Small_text"
+        android:layout_marginTop="80dp"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_login" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_text_email"
-        style="@style/Background_text_input_layout"
+        style="@style/TextInputLayout_Login"
         android:layout_marginTop="240dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,15 +36,21 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_email"
-            style="@style/Background_text_input_edit_text"
-            android:background="@drawable/background_edit_text"
-            android:hint="Email" />
+            style="@style/TextInputEditText_Login"
+            android:background="@color/dark_grey" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        style="@style/Small_text"
+        android:layout_marginTop="10dp"
+        android:text="Senha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_email" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_text_senha"
-        style="@style/Background_text_input_layout"
+        style="@style/TextInputLayout_Login"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,57 +58,57 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_senha"
-            style="@style/Background_text_input_edit_text"
-            android:background="@drawable/background_edit_text"
-            android:hint="Senha" />
+            style="@style/TextInputEditText_Login"
+            android:background="@color/dark_grey"
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        app:layout_constraintTop_toBottomOf="@id/edit_text_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toBottomOf="@id/edit_text_senha">
+
         <TextView
+            style="@style/Small_text"
             android:text="Ainda não é cadastrado?"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+             />
+
         <TextView
             android:id="@+id/to_cadastro_page"
-            android:text="Cadastre-se"
+            style="@style/Small_text"
             android:layout_marginStart="5dp"
-            android:textColor="@color/dark_blue"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="Cadastre-se"
+            android:textColor="@color/light_red"
+            android:textStyle="bold" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_login"
         style="@style/Button_geral"
-        android:background="@drawable/background_button"
+        android:background="@color/light_red"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text_senha"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_text_senha" />
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/container_progressbar_login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text_senha"
-        android:visibility="gone"
-        android:background="@drawable/background_button"
+        style="@style/Button_geral"
         android:layout_gravity="center"
+        android:background="@drawable/background_button"
         android:gravity="center"
-        style="@style/Button_geral">
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_senha">
+
         <ProgressBar
-            android:indeterminateTint="@color/light_purple"
             android:layout_width="30dp"
-            android:layout_height="30dp"/>
+            android:layout_height="30dp"
+            android:indeterminateTint="@color/light_purple" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

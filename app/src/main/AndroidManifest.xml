@@ -15,16 +15,16 @@
         android:theme="@style/Theme.MovieApp"
         tools:targetApi="31">
         <activity
-            android:name=".activities.DetalhesPage"
+            android:name=".ui.DetalhesPage"
             android:exported="false" />
         <activity
-            android:name=".activities.HomePage"
+            android:name=".ui.HomePage"
             android:exported="false" />
         <activity
-            android:name=".activities.CadastroPage"
+            android:name=".ui.CadastroPage"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

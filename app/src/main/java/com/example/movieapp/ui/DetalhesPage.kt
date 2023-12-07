@@ -1,10 +1,10 @@
-package com.example.movieapp.activities
+package com.example.movieapp.ui
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.example.movieapp.R
 import com.example.movieapp.databinding.ActivityDetalhesPageBinding
 
 class DetalhesPage : AppCompatActivity() {
@@ -27,6 +27,16 @@ class DetalhesPage : AppCompatActivity() {
         binding.descricaoFilme.text = descricao
         binding.elencoFilme.text = "$elenco..."
 
+        binding.icArrowBackToHomePage.setOnClickListener {
+            backToHomePage()
+        }
 
+
+    }
+
+    private fun backToHomePage(){
+        val intent = Intent(this, HomePage::class.java)
+        startActivity(intent)
+        finish()
     }
 }

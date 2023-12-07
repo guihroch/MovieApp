@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".activities.HomePage">
+    tools:context=".ui.HomePage">
 
 
     <LinearLayout
@@ -43,7 +43,7 @@
         android:id="@+id/recycler_view_filmes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#232323"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

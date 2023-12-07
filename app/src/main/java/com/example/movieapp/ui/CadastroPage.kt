@@ -1,4 +1,4 @@
-package com.example.movieapp.activities
+package com.example.movieapp.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,8 +9,6 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import androidx.core.view.isEmpty
-import com.example.movieapp.MainActivity
 import com.example.movieapp.R
 import com.example.movieapp.databinding.ActivityCadastroPageBinding
 import com.google.firebase.FirebaseNetworkException
@@ -28,10 +26,10 @@ class CadastroPage : AppCompatActivity() {
         window.statusBarColor = Color.parseColor("#FF000000")
 
         binding.buttonContinuar.setOnClickListener {
-            validarEmailCadastro()
+            logicaValidarEmailCadastro()
         }
         binding.buttonCadastrar.setOnClickListener {
-        cadastroFirebase()
+                cadastroFirebase()
         }
 
         binding.icArrowBackLoginPage.setOnClickListener {
@@ -51,28 +49,30 @@ class CadastroPage : AppCompatActivity() {
     private fun toastSucesso() {
         //Fazer toast erro
         val view =
-            LayoutInflater.from(this).inflate(R.layout.toast_customizada_sucesso, null, false)
+            LayoutInflater.from(this).inflate(R.layout.custom_toast_sucesso_cadastro, null, false)
         val toastSucesso = Toast(this)
         toastSucesso.view = view
-        toastSucesso.duration = Toast.LENGTH_SHORT
+        toastSucesso.duration = Toast.LENGTH_LONG
         toastSucesso.show()
     }
 
     fun customToastError() {
-        val view = LayoutInflater.from(this).inflate(R.layout.toast_customizada_error, null, false)
+        val view =
+            LayoutInflater.from(this).inflate(R.layout.custom_toast_error_cadastro, null, false)
         val toastErro = Toast(this)
         toastErro.view = view
-        toastErro.duration = Toast.LENGTH_SHORT
+        toastErro.duration = Toast.LENGTH_LONG
         toastErro.show()
+
     }
 
-    private fun validarEmailCadastro() {
+    private fun logicaValidarEmailCadastro() {
         val email = binding.editEmail.text.toString()
         val emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$"
 
         when {
             email.isEmpty() -> {
-                binding.editTextEmail.helperText = "Email é obrigatório"
+                binding.editTextEmail.helperText = "Email é obrigatório!"
                 binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
                 Handler(Looper.getMainLooper()).postDelayed({
                     binding.editTextEmail.helperText = ""
@@ -81,7 +81,7 @@ class CadastroPage : AppCompatActivity() {
             }
 
             !email.matches(emailRegex.toRegex()) -> {
-                binding.editTextEmail.helperText = "Digite um email válido"
+                binding.editTextEmail.helperText = "Digite um email válido!"
                 binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
                 Handler(Looper.getMainLooper()).postDelayed({
                     binding.editTextEmail.helperText = ""
@@ -101,27 +101,38 @@ class CadastroPage : AppCompatActivity() {
 
 
     }
+
     private fun cadastroFirebase() {
         val emailCadastro = binding.editEmail.text.toString()
         val senhaCadastro = binding.editSenha.text.toString()
         auth = FirebaseAuth.getInstance()
-        auth.createUserWithEmailAndPassword(emailCadastro, senhaCadastro)
-            .addOnCompleteListener { cadastro ->
-                if (cadastro.isSuccessful) {
-                    binding.containerProgressbar.visibility = View.VISIBLE
-                    binding.buttonCadastrar.visibility = View.GONE
-                    Handler(Looper.getMainLooper()).postDelayed({
-                        binding.containerProgressbar.visibility = View.GONE
-                        binding.buttonCadastrar.visibility = View.VISIBLE
-                        toastSucesso()
-                    }, 2000)
-                }
+        if(senhaCadastro.isEmpty()) {
+            binding.editTextSenha.helperText =
+                "Senha é obrigatório!"
+            binding.editTextSenha.boxStrokeColor = Color.parseColor("#DD4247")
+            Handler(Looper.getMainLooper()).postDelayed({
+                binding.editTextSenha.helperText = ""
+                binding.editTextSenha.boxStrokeColor = Color.parseColor("#171515")
+            }, 2000)
+        } else {
+            auth.createUserWithEmailAndPassword(emailCadastro, senhaCadastro)
+                .addOnCompleteListener { cadastro ->
+                    if (cadastro.isSuccessful) {
+                        binding.containerProgressbar.visibility = View.VISIBLE
+                        binding.buttonCadastrar.visibility = View.GONE
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            binding.containerProgressbar.visibility = View.GONE
+                            binding.buttonCadastrar.visibility = View.VISIBLE
+                            toastSucesso()
+                        }, 2000)
+                    }
+
             }.addOnFailureListener {
                 val erro = it
                 when {
                     erro is FirebaseAuthWeakPasswordException -> {
                         binding.editTextSenha.helperText =
-                            "A senha deve ter pelo menos 6 caracteres"
+                            "A senha deve ter pelo menos 6 caracteres!"
                         binding.editTextSenha.boxStrokeColor = Color.parseColor("#DD4247")
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.editTextSenha.helperText = ""
@@ -137,16 +148,14 @@ class CadastroPage : AppCompatActivity() {
                             binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")
                         }, 2000)
                     }
-
                     erro is FirebaseNetworkException -> {
-                        Toast.makeText(this, "Sem conexão com a internet", Toast.LENGTH_SHORT)
+                        Toast.makeText(this, "Sem conexão com a internet!", Toast.LENGTH_SHORT)
                             .show()
                     }
-
                     else -> {
                         customToastError()
                     }
                 }
             }
     }
-}
+}}

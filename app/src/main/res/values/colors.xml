@@ -5,4 +5,7 @@
     <color name="light_purple">#3F51B5</color>
     <color name="light_black">#171515</color>
     <color name="dark_blue">#233491</color>
+    <color name="light_red">#C10C49</color>
+    <color name="dark_grey">#232323</color>
+    <color name="red">#DD4247</color>
 </resources>

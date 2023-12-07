@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.CadastroPage">
+    tools:context=".ui.CadastroPage">
 
 
         <ImageView
@@ -24,7 +24,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:text="Cadastro"
-        android:textColor="@color/dark_blue"
+        android:textColor="@color/light_red"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_text_email"
-        style="@style/Background_text_input_layout"
+        style="@style/TextInputLayout_Login"
         android:layout_marginTop="10dp"
         app:helperTextEnabled="true"
         app:helperTextTextColor="#DD4247"
@@ -75,7 +75,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:maxLines="1"
             android:id="@+id/edit_email"
-            style="@style/Background_text_input_edit_text"
+            style="@style/TextInputEditText_Login"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +92,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_text_senha"
-        style="@style/Background_text_input_layout"
+        style="@style/TextInputLayout_Login"
         android:layout_marginTop="10dp"
         android:visibility="gone"
         app:helperTextEnabled="true"
@@ -107,7 +107,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:maxLines="1"
 android:id="@+id/edit_senha"
-            style="@style/Background_text_input_edit_text"
+            style="@style/TextInputEditText_Login"
              />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -148,7 +148,7 @@ android:id="@+id/edit_senha"
         <ProgressBar
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:indeterminateTint="@color/light_purple" />
+            android:indeterminateTint="@color/white" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
