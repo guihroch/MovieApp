@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    //Main Activity
     <style name="TextInputLayout_Login">
         <item name="android:layout_marginStart">20dp</item>
         <item name="android:layout_marginEnd">20dp</item>
@@ -16,12 +17,13 @@
     </style>
 
     <style name="TextInputEditText_Login">
+        <item name="maxLines">1</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
     </style>
 
-    <style name="Button_geral">
+    <style name="Button_login">
         <item name="android:layout_width">250dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_marginTop">100dp</item>
@@ -31,8 +33,7 @@
         <item name="textAllCaps">false</item>
     </style>
 
-
-    <style name="Small_text">
+    <style name="Small_text_login_page">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_height">wrap_content</item>
@@ -40,7 +41,164 @@
         <item name="android:layout_marginStart">20dp</item>
     </style>
 
+    //CadastroPage
+    <style name="TextInputLayout_Cadastro">
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="hintEnabled">false</item>
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextColor">@color/red</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="errorEnabled">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
 
+    <style name="TextInputEditText_Cadastro">
+        <item name="maxLines">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
 
+    <style name="Small_text_cadastro_page">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
 
+    <style name="custom_text_cadastro_page">
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
+
+    <style name="Button_cadastro">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing">0.2</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="progress_bar_cadastro">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:indeterminateTint">@color/white</item>
+    </style>
+
+    //HomePage
+    <style name="Custom_Container_Home_Page">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Medium_Text_Home_Page">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">0.1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginStart">30dp</item>
+    </style>
+
+    <style name="Icon_Logout_Home_Page">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:src">@drawable/ic_logout</item>
+    </style>
+
+    <style name="Custom_Container_Loading_Home_Page">
+        <item name="android:layout_width">220dp</item>
+        <item name="android:layout_height">70dp</item>
+    </style>
+
+    <style name="Linear_Loading_Bar_Home_Page">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    //DetalhesPage
+    <style name="Big_Text_Detalhes">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+       <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="Medium_Text_Detalhes_Page">
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Small_Text_Detalhes_Page">
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Custom_Contianer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Play_Button_Detalhes_Page">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:src">@drawable/ic_play_arrow</item>
+    </style>
+
+    <style name="Small_Button_Add_Download">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_marginEnd">40dp</item>
+    </style>
+
+    <style name="CapaFilme_Detalhes_Page">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">500dp</item>
+        <item name="android:layout_marginTop">50dp</item>
+    </style>
+
+    <style name="Icon_Arrow_back_To_Home_Page">
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:src">@drawable/ic_arrow_back_white</item>
+    </style>
 </resources>

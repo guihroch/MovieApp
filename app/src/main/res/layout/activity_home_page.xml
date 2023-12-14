@@ -10,32 +10,20 @@
 
     <LinearLayout
         android:id="@+id/container_principal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        style="@style/Custom_Container_Home_Page"
         android:background="@color/black"
-        android:gravity="center"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_weight="0.1"
-            android:gravity="center"
+            style="@style/Medium_Text_Home_Page"
             android:text="CineFlix"
-            android:textColor="@color/white"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+             />
 
         <ImageView
             android:id="@+id/icon_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_logout" />
+            style="@style/Icon_Logout_Home_Page" />
     </LinearLayout>
 
 
@@ -47,23 +35,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container_principal" />
+        app:layout_constraintTop_toBottomOf="@id/container_principal"
+         />
 
     <View
         android:id="@+id/container_loading"
-        android:layout_width="220dp"
-        android:layout_height="80dp"
-        android:background="@color/white"
+       style="@style/Custom_Container_Loading_Home_Page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
+        style="@style/Linear_Loading_Bar_Home_Page"
         app:layout_constraintBottom_toBottomOf="@id/container_loading"
         app:layout_constraintEnd_toEndOf="@id/container_loading"
         app:layout_constraintStart_toStartOf="@id/container_loading"
@@ -75,10 +59,11 @@
             android:layout_height="35dp" />
 
         <TextView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="5dp"
             android:text="Carregando..."
             android:textSize="16sp"
             android:textStyle="bold" />

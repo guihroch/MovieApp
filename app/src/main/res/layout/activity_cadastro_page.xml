@@ -8,14 +8,14 @@
     tools:context=".ui.CadastroPage">
 
 
-        <ImageView
-            android:id="@+id/ic_arrow_back_login_page"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_arrow_back"
-            android:layout_width="35dp"
-            android:layout_height="35dp"/>
+    <ImageView
+        android:id="@+id/ic_arrow_back_login_page"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_cadastrar"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:text="Cadastro"
+        android:text="@string/cadastro"
         android:textColor="@color/light_red"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -33,122 +33,89 @@
 
     <TextView
         android:id="@+id/text_informe_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:text="Informe seu email para podermos continuar"
-        android:visibility="visible"
-        android:textSize="14sp"
+        style="@style/custom_text_cadastro_page"
+        android:text="@string/informe_seu_email_para_podermos_continuar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_cadastrar" />
 
 
-
     <TextView
         android:id="@+id/text_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Small_text_cadastro_page"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:text="Email"
-        android:textSize="14sp"
+        android:text="@string/email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_informe_email" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_text_email"
-        style="@style/TextInputLayout_Login"
-        android:layout_marginTop="10dp"
-        app:helperTextEnabled="true"
-        app:helperTextTextColor="#DD4247"
-        app:boxStrokeErrorColor="#DD4247"
-        app:boxStrokeWidth="1dp"
-        app:errorEnabled="true"
+        style="@style/TextInputLayout_Cadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:maxLines="1"
             android:id="@+id/edit_email"
-            style="@style/TextInputEditText_Login"
-            />
+            android:inputType="textEmailAddress"
+            style="@style/TextInputEditText_Cadastro" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/text_senha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Senha"
-        android:textSize="14sp"
+        style="@style/Small_text_cadastro_page"
+        android:text="@string/senha"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_email" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_text_senha"
-        style="@style/TextInputLayout_Login"
-        android:layout_marginTop="10dp"
+        style="@style/TextInputLayout_Cadastro"
         android:visibility="gone"
-        app:helperTextEnabled="true"
-        app:helperTextTextColor="#DD4247"
-        app:boxStrokeErrorColor="#DD4247"
-        app:boxStrokeWidth="1dp"
-        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_senha">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:maxLines="1"
-android:id="@+id/edit_senha"
-            style="@style/TextInputEditText_Login"
-             />
+            android:id="@+id/edit_senha"
+            android:inputType="numberPassword"
+            style="@style/TextInputEditText_Cadastro" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_continuar"
-        style="@style/Button_geral"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/background_button"
-        android:text="Continuar"
+        style="@style/Button_cadastro"
+        android:background="@drawable/background_button_loading"
+        android:text="@string/continuar"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_senha" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_cadastrar"
+        style="@style/Button_cadastro"
+        android:background="@drawable/background_button_loading"
+        android:text="@string/cadastrar"
         android:visibility="gone"
-        android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_text_senha"
-        android:background="@drawable/background_button"
-        android:layout_marginTop="40dp"
-        style="@style/Button_geral"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_text_senha" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/container_progressbar"
-        style="@style/Button_geral"
-        android:layout_gravity="center"
-        android:background="@drawable/background_button"
+        style="@style/Button_cadastro"
         android:gravity="center"
+        android:background="@drawable/background_button_loading"
         android:visibility="gone"
-        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_senha">
 
         <ProgressBar
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:indeterminateTint="@color/white" />
+            style="@style/progress_bar_cadastro" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
