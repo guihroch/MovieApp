@@ -43,7 +43,8 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
   - RecyclerView: Permite a criação de listas dinâmicas através do reaproveitamento de itens presentes na mesma, melhorando o desempenho do app.
   - ViewBinding: Liga os componentes do XML no Kotlin através de uma classe que garante segurança de tipo e outras vantagens.
   - Custom Views: View customizadas feitas do zero usando XML.
-  - [...]
+  - Material Design Components: Permite a criação de uma interface de usuário utilizando diversos componentes interativos.
+    
 
 - Arquitetura - LISTE BREVEMENTE OS COMPONENTES DA SUA ARQUITETURA UTILIZADA
   - MVC (Model - View - Controller)
