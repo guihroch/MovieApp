@@ -55,7 +55,7 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
 - Bibliotecas - LISTE TODAS AS BIBLIOTECAS USADAS NO PROJETO, COM LINK E DESCRIÇÃO BREVE DO QUE ELA FAZ
   - [Retrofit2 & OkHttp3](https://github.com/square/retrofit): Para realizar requisições seguindo o padrão HTTP.
   - [Glide](https://github.com/bumptech/glide): Para carregamento de imagens e cacheamento das mesmas.
-  - [Firebase Authentication](https://firebase.google.com/docs/auth?hl=pt)r): O Firebase Authentication é um serviço de back-end projetado para simplificar o processo de autenticação de usuários.
+  - [Firebase Authentication](https://firebase.google.com/docs/auth?hl=pt): O Firebase Authentication é um serviço de back-end projetado para simplificar o processo de autenticação de usuários.
   - []
 
 ## Arquitetura
