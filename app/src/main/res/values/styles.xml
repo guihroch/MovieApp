@@ -64,12 +64,29 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+    <style name="Icon_Arrow_Back_Cadastro_Page">
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:src">@drawable/ic_arrow_back</item>
+    </style>
+
     <style name="Small_text_cadastro_page">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginStart">20dp</item>
+    </style>
+
+    <style name="Medium_Text_Cadastro_Page">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">@color/light_red</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">40dp</item>
+
     </style>
 
     <style name="custom_text_cadastro_page">
@@ -138,6 +155,18 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="Small_Text_Home_Page">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
     //DetalhesPage
     <style name="Big_Text_Detalhes">
         <item name="android:layout_width">match_parent</item>
@@ -200,5 +229,17 @@
         <item name="android:layout_height">35dp</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:src">@drawable/ic_arrow_back_white</item>
+    </style>
+
+    //Item Categoria
+    <style name="Text_Categoria_Filme">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+
     </style>
 </resources>

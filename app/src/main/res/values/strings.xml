@@ -11,4 +11,6 @@
     <string name="elenco">elenco...</string>
     <string name="elenco_">Elenco:</string>
     <string name="nome_do_filme">Nome do Filme</string>
+    <string name="carregando">Carregando...</string>
+    <string name="filmes_categoria">Filmes Categoria</string>
 </resources>

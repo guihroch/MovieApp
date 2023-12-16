@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 Handler(Looper.getMainLooper()).postDelayed({
                     binding.buttonLogin.visibility = View.VISIBLE
                     binding.containerProgressbarLogin.visibility = View.GONE
-                    customToastSucesso()
+                    Toast.makeText(this, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, HomePage::class.java)
                     startActivity(intent)
                 }, 2000)

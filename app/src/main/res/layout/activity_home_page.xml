@@ -38,20 +38,14 @@
         app:layout_constraintTop_toBottomOf="@id/container_principal"
          />
 
-    <View
+
+    <LinearLayout
         android:id="@+id/container_loading"
-       style="@style/Custom_Container_Loading_Home_Page"
+        style="@style/Linear_Loading_Bar_Home_Page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        style="@style/Linear_Loading_Bar_Home_Page"
-        app:layout_constraintBottom_toBottomOf="@id/container_loading"
-        app:layout_constraintEnd_toEndOf="@id/container_loading"
-        app:layout_constraintStart_toStartOf="@id/container_loading"
-        app:layout_constraintTop_toTopOf="@id/container_loading">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ProgressBar
             android:id="@+id/progress_bar_loading"
@@ -59,14 +53,9 @@
             android:layout_height="35dp" />
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginStart="5dp"
-            android:text="Carregando..."
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            style="@style/Small_Text_Home_Page"
+            android:text="@string/carregando"
+             />
 
     </LinearLayout>
 

@@ -10,23 +10,14 @@
 
     <ImageView
         android:id="@+id/ic_arrow_back_login_page"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_arrow_back"
+        style="@style/Icon_Arrow_Back_Cadastro_Page"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_cadastrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        style="@style/Medium_Text_Cadastro_Page"
         android:text="@string/cadastro"
-        android:textColor="@color/light_red"
-        android:textSize="50sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

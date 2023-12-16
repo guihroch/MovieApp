@@ -6,13 +6,9 @@
 
     <TextView
         android:id="@+id/text_categoria_filme"
-        android:layout_margin="20dp"
-        android:text="Filmes Categoria"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        style="@style/Text_Categoria_Filme"
+        android:text="@string/filmes_categoria"
+       />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_filmes"
