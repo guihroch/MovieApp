@@ -63,7 +63,7 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
 APRESENTE A ARQUITETURA UTILIZADA NO PROJETO
 **Nome do aplicativo** utiliza a arquitetura MVVM e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
 </br></br>
-<img alt="screenshots" width="30%" src="screenshots/mvc_arquitetura.png"/>
+<img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
 <br>
 
 ## API de terceiros
