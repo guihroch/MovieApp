@@ -1,94 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:layout_height="1000dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+
+    tools:context=".ui.DetalhesPage"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+   android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:fillViewport="true">
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/black"
-        tools:context=".ui.DetalhesPage">
-
+    >
         <ImageView
             android:id="@+id/ic_arrow_back_to_home_page"
             style="@style/Icon_Arrow_back_To_Home_Page"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <ImageView
-            android:id="@+id/capa_filme"
-            style="@style/CapaFilme_Detalhes_Page"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/nome_filme"
-            style="@style/Big_Text_Detalhes"
-            android:text="@string/nome_do_filme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/capa_filme" />
 
-        <ImageButton
-            android:id="@+id/button_play"
-            style="@style/Play_Button_Detalhes_Page"
-            android:background="@drawable/background_button_play"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nome_filme" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nome_filme">
-
-            <ImageView
-                style="@style/Small_Button_Add_Download"
-                android:src="@drawable/ic_add" />
-
-            <ImageView
-                style="@style/Small_Button_Add_Download"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/ic_download" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/container_descricao"
-            style="@style/Custom_Contianer"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_play">
-
-            <TextView
-                style="@style/Medium_Text_Detalhes_Page"
-                android:text="@string/descricao" />
-
-            <TextView
-                android:id="@+id/descricao_filme"
-                style="@style/Small_Text_Detalhes_Page"
-                android:text="@string/descri_o_do_filme" />
-        </LinearLayout>
-
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/container_descricao">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:scaleType="center"
+                android:layout_marginTop="60dp"
+                android:id="@+id/capa_filme"
+                style="@style/CapaFilme_Detalhes_Page"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                style="@style/Medium_Text_Detalhes_Page"
-                android:text="@string/elenco_" />
-
-            <TextView
-                android:id="@+id/elenco_filme"
-                style="@style/Small_Text_Detalhes_Page"
-                android:text="@string/elenco" />
-        </LinearLayout>
+                android:id="@+id/nome_filme"
+                style="@style/Big_Text_Detalhes"
+                android:text="@string/nome_do_filme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/capa_filme" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nome_filme">
+
+                <ImageButton
+                    android:id="@+id/button_play"
+                    style="@style/Play_Button_Detalhes_Page"
+                    android:background="@drawable/background_button_play"
+                     />
+
+                <TextView
+                    android:text="@string/assistir_agora"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    style="@style/Small_Button_Add_Download"
+                    android:layout_marginStart="160dp"
+                    android:src="@drawable/ic_add" />
+
+                <ImageView
+                    style="@style/Small_Button_Add_Download"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_download" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_descricao"
+                style="@style/Custom_Contianer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_play">
+
+
+
+                <TextView
+                    android:id="@+id/descricao_filme"
+                    android:layout_marginStart="20dp"
+                    style="@style/Medium_Text_Detalhes_Page"
+                    android:text="@string/descri_o_do_filme" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <TextView
+                    style="@style/Medium_Text_Detalhes_Page"
+                    android:text="@string/elenco_" />
+
+                <TextView
+                    android:id="@+id/elenco_filme"
+                    style="@style/Small_Text_Detalhes_Page"
+                    android:text="@string/elenco" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

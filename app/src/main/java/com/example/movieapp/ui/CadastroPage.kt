@@ -29,6 +29,8 @@ class CadastroPage : AppCompatActivity() {
             logicaValidarEmailCadastro()
         }
         binding.buttonCadastrar.setOnClickListener {
+            binding.containerProgressbar.visibility = View.VISIBLE
+            binding.buttonCadastrar.visibility = View.GONE
                 cadastroFirebase()
         }
 
@@ -118,8 +120,6 @@ class CadastroPage : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(emailCadastro, senhaCadastro)
                 .addOnCompleteListener { cadastro ->
                     if (cadastro.isSuccessful) {
-                        binding.containerProgressbar.visibility = View.VISIBLE
-                        binding.buttonCadastrar.visibility = View.GONE
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.containerProgressbar.visibility = View.GONE
                             binding.buttonCadastrar.visibility = View.VISIBLE
@@ -134,6 +134,8 @@ class CadastroPage : AppCompatActivity() {
                         binding.editTextSenha.helperText =
                             "A senha deve ter pelo menos 6 caracteres!"
                         binding.editTextSenha.boxStrokeColor = Color.parseColor("#DD4247")
+                        binding.containerProgressbar.visibility = View.GONE
+                        binding.buttonCadastrar.visibility = View.VISIBLE
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.editTextSenha.helperText = ""
                             binding.editTextSenha.boxStrokeColor = Color.parseColor("#171515")
@@ -143,6 +145,8 @@ class CadastroPage : AppCompatActivity() {
                     erro is FirebaseAuthUserCollisionException -> {
                         binding.editTextEmail.helperText = "Este usuário ja foi cadastrado!"
                         binding.editTextEmail.boxStrokeColor = Color.parseColor("#DD4247")
+                        binding.containerProgressbar.visibility = View.GONE
+                        binding.buttonCadastrar.visibility = View.VISIBLE
                         Handler(Looper.getMainLooper()).postDelayed({
                             binding.editTextEmail.helperText = ""
                             binding.editTextEmail.boxStrokeColor = Color.parseColor("#171515")

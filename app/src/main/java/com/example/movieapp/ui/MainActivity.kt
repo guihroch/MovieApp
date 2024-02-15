@@ -41,8 +41,7 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { login ->
             if (login.isSuccessful) {
-                binding.buttonLogin.visibility = View.GONE
-                binding.containerProgressbarLogin.visibility = View.VISIBLE
+
                 Handler(Looper.getMainLooper()).postDelayed({
                     binding.buttonLogin.visibility = View.VISIBLE
                     binding.containerProgressbarLogin.visibility = View.GONE
@@ -87,6 +86,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             else -> {
+                binding.buttonLogin.visibility = View.GONE
+                binding.containerProgressbarLogin.visibility = View.VISIBLE
                 autenticarUsuario(email, senha)
             }
         }

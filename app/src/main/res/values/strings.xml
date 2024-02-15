@@ -13,4 +13,5 @@
     <string name="nome_do_filme">Nome do Filme</string>
     <string name="carregando">Carregando...</string>
     <string name="filmes_categoria">Filmes Categoria</string>
+    <string name="assistir_agora">Assistir agora</string>
 </resources>
