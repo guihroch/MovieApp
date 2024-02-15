@@ -21,12 +21,7 @@
 </br>
 
 <p float="left" align="center">
-<img alt="screenshots" width="30%" src="screenshots/screenshot1.png"/>
-  <img alt="screenshots" width="30%" src="screenshots/screenshot2.png"/>
-  <img alt="screenshots" width="30%" src="screenshots/screenshot3.png"/>
-  <img alt="screenshots" width="30%" src="screenshots/screenshot4.png"/>
-  <img alt="screenshots" width="30%" src="screenshots/screenshot5.png"/>
-  <img alt="screenshots" width="30%" src="screenshots/screenshot6.png"/>
+
  
   
 </p>
