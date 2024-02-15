@@ -47,13 +47,13 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
   - ConstraintLayout: Permite a criação de layouts complexos sem a necessidade de uma hierarquia de visualização aninhada.
     
 
-- Arquitetura - LISTE BREVEMENTE OS COMPONENTES DA SUA ARQUITETURA UTILIZADA
+- Arquitetura
   - MVC (Model - View - Controller)
   - Comunicação da ViewModel com a View através de LiveData
   - Comunicação da ViewModel com a Model através de Kotlin Flow
   - Repositories para abstração da comunidação com a camada de dados.
   
-- Bibliotecas - LISTE TODAS AS BIBLIOTECAS USADAS NO PROJETO, COM LINK E DESCRIÇÃO BREVE DO QUE ELA FAZ
+- Bibliotecas
   - [Retrofit2](https://github.com/square/retrofit): Para realizar requisições seguindo o padrão HTTP.
   - [Glide](https://github.com/bumptech/glide): Para carregamento de imagens e cacheamento das mesmas.
   - [Firebase Authentication](https://firebase.google.com/docs/auth?hl=pt): O Firebase Authentication é um serviço de back-end projetado para simplificar o processo de autenticação de usuários.
@@ -63,7 +63,7 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
 APRESENTE A ARQUITETURA UTILIZADA NO PROJETO
 **Nome do aplicativo** utiliza a arquitetura MVVM e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
 </br></br>
-<img alt="screenshots" width="30%" src="screenshots/mvc_arquitetura.png"/>
+<img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
 <br>
 
 ## API de terceiros
