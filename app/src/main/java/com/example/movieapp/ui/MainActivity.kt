@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
                 }, 2000)
             }
         }.addOnFailureListener {
+            binding.buttonLogin.visibility = View.VISIBLE
+            binding.containerProgressbarLogin.visibility = View.GONE
             Toast.makeText(this, "Erro ao realizar login", Toast.LENGTH_SHORT).show()
         }
     }
