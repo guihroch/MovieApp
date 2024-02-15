@@ -26,6 +26,8 @@
   <img alt="screenshots" width="30%" src="screenshots/screenshot3.png"/>
   <img alt="screenshots" width="30%" src="screenshots/screenshot4.png"/>
   <img alt="screenshots" width="30%" src="screenshots/screenshot5.png"/>
+  <img alt="screenshots" width="30%" src="screenshots/screenshot6.png"/>
+  <img alt="screenshots" width="30%" src="screenshots/screenshot7.png"/>
 </p>
 
 ## Download
