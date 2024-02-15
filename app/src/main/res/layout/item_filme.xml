@@ -12,7 +12,7 @@
 
     <ImageView
         android:id="@+id/capa_filme"
-        android:scaleType="centerCrop"
+        android:scaleType="center"
         android:src="@drawable/ic_launcher_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
