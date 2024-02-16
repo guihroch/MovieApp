@@ -64,7 +64,7 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
 
 ## Arquitetura
 APRESENTE A ARQUITETURA UTILIZADA NO PROJETO
-**Nome do aplicativo** utiliza a arquitetura MVVM e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
+**CINEFLIX** utiliza a arquitetura MVC e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
 </br></br>
 <img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
 <br>
@@ -76,14 +76,19 @@ COLOQUE O NOME, LINK E DESCRIÇÃO DAS APIS UTILIZADAS NO PROJETO
 ## Features
 
 ### Feature 1
-<img src="screenshots/feature-1.gif" width="25%"/>
+<img src="screenshots/feature1.gif" width="25%"/>
 
-Texto de exemplo
+Tela de Login.
 
 ### Feature 2
-<img src="screenshots/feature-2.gif" width="25%"/>
+<img src="screenshots/feature2.gif" width="25%"/>
 
-Texto de Exemplo.
+Pagina Principal e de detalhes do filme.
+
+### Feature 3
+<img src="screenshots/feature3.gif" width="25%"/>
+
+Tela de Cadastro.
 
 # Licença
 
