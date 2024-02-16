@@ -71,7 +71,7 @@ CineFlix utiliza a API de filmes [https://stackmobile.com.br/filmes] disponibili
 ### Tela de Login
 <img src="screenshots/feature1.gif" width="25%"/>
 
-Onde irá ocorrer a autenticação do usuário já cadastrado através do Firebase authentication, caso o usuário digite um email ou senha inválido, ele será notificado. Caso haja sucesso na autenticação, o usuário será encaminhado para a pagina principal do CineFlix.
+Onde irá ocorrer a autenticação do usuário já cadastrado através do Firebase authentication, caso o usuário digite um email ou uma senha inválida, ele será notificado. Caso haja sucesso na autenticação, o usuário será encaminhado para a pagina principal do CineFlix.
 
 ### Feature 2
 <img src="screenshots/feature2.gif" width="25%"/>
