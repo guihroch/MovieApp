@@ -73,10 +73,10 @@ CineFlix utiliza a API de filmes [https://stackmobile.com.br/filmes] disponibili
 
 Onde irá ocorrer a autenticação do usuário já cadastrado através do Firebase authentication, caso o usuário digite um email ou uma senha inválida, ele será notificado. Caso haja sucesso na autenticação, o usuário será encaminhado para a pagina principal do CineFlix.
 
-### Feature 2
+### Tela Principal
 <img src="screenshots/feature2.gif" width="25%"/>
 
-Pagina Principal e de detalhes do filme.
+Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes disponíveis e suas respectivas categorias. Ao clicar em um filme, o usuário será encaminhado para a tela de detalhes, onde ele terá acesso a descrição, ao elenco do filme selecionado e também a possibilidade de assistir, adicionar a lista de favoritos ou baixar o filme.
 
 ### Feature 3
 <img src="screenshots/feature3.gif" width="25%"/>
