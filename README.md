@@ -64,7 +64,7 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
 
 ## API de terceiros
 
-COLOQUE O NOME, LINK E DESCRIÇÃO DAS APIS UTILIZADAS NO PROJETO
+CineFlix utiliza a API de filmes [https://stackmobile.com.br/filmes] disponibilizada pelo professor Marcos Duarte no curso Stack Mobile de desenvolvimento android.
 
 ## Features
 
