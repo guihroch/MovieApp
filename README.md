@@ -48,13 +48,6 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
   - Custom Views: View customizadas feitas do zero usando XML.
   - Material Design Components: Permite a criação de uma interface de usuário utilizando diversos componentes interativos e personalizáveis.
   - ConstraintLayout: Permite a criação de layouts complexos sem a necessidade de uma hierarquia de visualização aninhada.
-    
-
-- Arquitetura
-  - MVC (Model - View - Controller)
-  - Comunicação da ViewModel com a View através de LiveData
-  - Comunicação da ViewModel com a Model através de Kotlin Flow
-  - Repositories para abstração da comunidação com a camada de dados.
   
 - Bibliotecas
   - [Retrofit2](https://github.com/square/retrofit): Para realizar requisições seguindo o padrão HTTP.
@@ -63,8 +56,8 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
   
 
 ## Arquitetura
-APRESENTE A ARQUITETURA UTILIZADA NO PROJETO
-**CINEFLIX** utiliza a arquitetura MVC e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
+
+**CINEFLIX** utiliza a arquitetura MVC (Model - View - Controller) que é um padrão de projeto de software que separa a interface do usuário (View) e das regras de negócio e dados (Model) usando um mediador (Controller) para conectar o modelo à view. 
 </br></br>
 <img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
 <br>
