@@ -83,7 +83,7 @@ Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes d
 
 Nessa feature o usuário precisa digitar um email válido(filtrado através do regex) para dar continuidade no cadastro, caso seja um email válido, ao clicar no botão de "continuar", ele terá acesso a nova etapa do cadastro, que agora inclui um campo de texto para digitar a senha e o botão para finalizar o cadastro. Caso o usuário digite uma senha inválida ou um usuário ja existente, ele será notificado. Caso ocorra tudo certo no processo de cadastro, ele irá receber um toast informado que o cadastro foi realizado com sucesso.
 
-### Tela de Cadastro
+### Tela de Detalhes e Logout
 <img src="screenshots/feature 4.gif" width="25%"/>
 
 Nessa feature o usuário precisa digitar um email válido(filtrado através do regex) para dar continuidade no cadastro, caso seja um email válido, ao clicar no botão de "continuar", ele terá acesso a nova etapa do cadastro, que agora inclui um campo de texto para digitar a senha e o botão para finalizar o cadastro. Caso o usuário digite uma senha inválida ou um usuário ja existente, ele será notificado. Caso ocorra tudo certo no processo de cadastro, ele irá receber um toast informado que o cadastro foi realizado com sucesso.
