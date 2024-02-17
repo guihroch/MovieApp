@@ -79,7 +79,12 @@ Onde irá ocorrer a autenticação do usuário já cadastrado através do Fireba
 Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes disponíveis e suas respectivas categorias. Ao clicar em um filme, o usuário será encaminhado para a tela de detalhes, onde ele terá acesso a descrição, ao elenco do filme selecionado e também a possibilidade de assistir, adicionar a lista de favoritos ou baixar o filme. Ao clicar no icone de seta no canto superior esquerdo, o usuário retorna a página principal. E caso queira deslogar, é só clicar no botão de logout para encerrar a sessão.
 
 ### Tela de Cadastro
-<img src="screenshots/feature3.gif" width="25%"/>
+<img src="screenshots/feature 3.gif" width="25%"/>
+
+Nessa feature o usuário precisa digitar um email válido(filtrado através do regex) para dar continuidade no cadastro, caso seja um email válido, ao clicar no botão de "continuar", ele terá acesso a nova etapa do cadastro, que agora inclui um campo de texto para digitar a senha e o botão para finalizar o cadastro. Caso o usuário digite uma senha inválida ou um usuário ja existente, ele será notificado. Caso ocorra tudo certo no processo de cadastro, ele irá receber um toast informado que o cadastro foi realizado com sucesso.
+
+### Tela de Cadastro
+<img src="screenshots/feature 4.gif" width="25%"/>
 
 Nessa feature o usuário precisa digitar um email válido(filtrado através do regex) para dar continuidade no cadastro, caso seja um email válido, ao clicar no botão de "continuar", ele terá acesso a nova etapa do cadastro, que agora inclui um campo de texto para digitar a senha e o botão para finalizar o cadastro. Caso o usuário digite uma senha inválida ou um usuário ja existente, ele será notificado. Caso ocorra tudo certo no processo de cadastro, ele irá receber um toast informado que o cadastro foi realizado com sucesso.
 
