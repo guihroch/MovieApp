@@ -82,7 +82,7 @@ Nessa feature o usuário precisa digitar um email válido(filtrado através do r
 ### Tela de Detalhes e Logout
 <img src="screenshots/feature 4.gif" width="25%"/>
 
-Nessa feature o usuário precisa digitar um email válido(filtrado através do regex) para dar continuidade no cadastro, caso seja um email válido, ao clicar no botão de "continuar", ele terá acesso a nova etapa do cadastro, que agora inclui um campo de texto para digitar a senha e o botão para finalizar o cadastro. Caso o usuário digite uma senha inválida ou um usuário ja existente, ele será notificado. Caso ocorra tudo certo no processo de cadastro, ele irá receber um toast informado que o cadastro foi realizado com sucesso.
+ Ao clicar em um filme, o usuário será encaminhado para a tela de detalhes, onde ele terá acesso a descrição, ao elenco do filme selecionado e também a possibilidade de assistir, adicionar a lista de favoritos ou baixar o filme. O usuário pode retornar a página principal ao clicar na seta no canto superior esquerdo. Caso queira deslogar, é só clicar no botão de logout na página principal para encerrar a sessão.
 
 # Licença
 
