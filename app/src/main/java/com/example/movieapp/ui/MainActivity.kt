@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }.addOnFailureListener {
             binding.buttonLogin.visibility = View.VISIBLE
             binding.containerProgressbarLogin.visibility = View.GONE
-            Toast.makeText(this, "Erro ao realizar login", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Email ou senha inválidos!", Toast.LENGTH_SHORT).show()
         }
     }
 
