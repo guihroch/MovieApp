@@ -1,4 +1,4 @@
-<h1 align="center">CINEFLIX</h1>
+<h1 align="center">CineFlix</h1>
 
   <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
@@ -31,10 +31,6 @@
   
 </p>
 
-## Download
-BADGE DA PLAYSTORE https://play.google.com/intl/en_us/badges/
-
-Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>. Você pode ver <a href="https://www.google.com/search?q=como+instalar+um+apk+no+android">aqui</a> como instalar uma APK no seu aparelho android.
 
 ## Tecnologias usadas e bibliotecas de código aberto
 
@@ -57,27 +53,26 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
 
 ## Arquitetura
 
-**CINEFLIX** utiliza a arquitetura MVC (Model - View - Controller) que é um padrão de projeto de software que separa a interface do usuário (View) e das regras de negócio e dados (Model) usando um mediador (Controller) para conectar o modelo à view. 
+****CineFlix**** utiliza a arquitetura MVC (Model - View - Controller) que é um padrão de projeto de software que separa a interface do usuário (View) e das regras de negócio e dados (Model) usando um mediador (Controller) para conectar o modelo à view. 
 </br></br>
 <img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
 <br>
 
 ## API de terceiros
 
-CineFlix utiliza a API de filmes [https://stackmobile.com.br/filmes] disponibilizada pelo professor Marcos Duarte no curso Stack Mobile de desenvolvimento android.
+CineFlix utiliza a API de filmes (https://stackmobile.com.br/filmes) disponibilizada pelo professor Marcos Duarte no curso Stack Mobile de desenvolvimento android.
 
 ## Features
 
 ### Tela de Login
 <img src="screenshots/feature 1.gif" width="25%"/>
 
-Onde irá ocorrer a autenticação do usuário já cadastrado através do Firebase authentication, caso o usuário digite um email ou uma senha inválida, ele será notificado. Caso haja sucesso na autenticação, o usuário será encaminhado para a pagina principal do CineFlix.
+ Autenticação do usuário através do Firebase authentication, caso o usuário digite um email ou uma senha inválida, ele será notificado. Caso haja sucesso na autenticação, o usuário cadastrado será encaminhado para a pagina principal do aplicativo.
 
 ### Tela Principal
 <img src="screenshots/feature 2.gif" width="25%"/>
 
-Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes disponíveis e suas respectivas categorias. Ao clicar em um filme, o usuário será encaminhado para a tela de detalhes, onde ele terá acesso a descrição, ao elenco do filme selecionado e também a possibilidade de assistir, adicionar a lista de favoritos ou baixar o filme. Ao clicar no icone de seta no canto superior esquerdo, o usuário retorna a página principal. E caso queira deslogar, é só clicar no botão de logout para encerrar a sessão.
-
+Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes disponíveis e suas respectivas categorias. Enquanto a requisição a API é realizada, o usuário é informado do carregamento da tela e assim que finalizado, os filmes se tornam disponíveis.
 ### Tela de Cadastro
 <img src="screenshots/feature 3.gif" width="25%"/>
 
