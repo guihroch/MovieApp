@@ -48,13 +48,6 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
   - Custom Views: View customizadas feitas do zero usando XML.
   - Material Design Components: Permite a criação de uma interface de usuário utilizando diversos componentes interativos e personalizáveis.
   - ConstraintLayout: Permite a criação de layouts complexos sem a necessidade de uma hierarquia de visualização aninhada.
-    
-
-- Arquitetura
-  - MVC (Model - View - Controller)
-  - Comunicação da ViewModel com a View através de LiveData
-  - Comunicação da ViewModel com a Model através de Kotlin Flow
-  - Repositories para abstração da comunidação com a camada de dados.
   
 - Bibliotecas
   - [Retrofit2](https://github.com/square/retrofit): Para realizar requisições seguindo o padrão HTTP.
@@ -63,27 +56,32 @@ Ou faça o download da <a href="apk/app-debug.apk?raw=true">APK diretamente</a>.
   
 
 ## Arquitetura
-APRESENTE A ARQUITETURA UTILIZADA NO PROJETO
-**Nome do aplicativo** utiliza a arquitetura MVVM e o padrão de Repositories, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
+
+**CINEFLIX** utiliza a arquitetura MVC (Model - View - Controller) que é um padrão de projeto de software que separa a interface do usuário (View) e das regras de negócio e dados (Model) usando um mediador (Controller) para conectar o modelo à view. 
 </br></br>
 <img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
 <br>
 
 ## API de terceiros
 
-COLOQUE O NOME, LINK E DESCRIÇÃO DAS APIS UTILIZADAS NO PROJETO
+CineFlix utiliza a API de filmes [https://stackmobile.com.br/filmes] disponibilizada pelo professor Marcos Duarte no curso Stack Mobile de desenvolvimento android.
 
 ## Features
 
-### Feature 1
-<img src="screenshots/feature-1.gif" width="25%"/>
+### Tela de Login
+<img src="screenshots/feature1.gif" width="25%"/>
 
-Texto de exemplo
+Onde irá ocorrer a autenticação do usuário já cadastrado através do Firebase authentication, caso o usuário digite um email ou uma senha inválida, ele será notificado. Caso haja sucesso na autenticação, o usuário será encaminhado para a pagina principal do CineFlix.
 
-### Feature 2
-<img src="screenshots/feature-2.gif" width="25%"/>
+### Tela Principal
+<img src="screenshots/feature2.gif" width="25%"/>
 
-Texto de Exemplo.
+Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes disponíveis e suas respectivas categorias. Ao clicar em um filme, o usuário será encaminhado para a tela de detalhes, onde ele terá acesso a descrição, ao elenco do filme selecionado e também a possibilidade de assistir, adicionar a lista de favoritos ou baixar o filme. Ao clicar no icone de seta no canto superior esquerdo, o usuário retorna a página principal. E caso queira deslogar, é só clicar no botão de logout para encerrar a sessão.
+
+### Tela de Cadastro
+<img src="screenshots/feature3.gif" width="25%"/>
+
+Nessa feature o usuário precisa digitar um email válido(filtrado através do regex) para dar continuidade no cadastro, caso seja um email válido, ao clicar no botão de "continuar", ele terá acesso a nova etapa do cadastro, que agora inclui um campo de texto para digitar a senha e o botão para finalizar o cadastro. Caso o usuário digite uma senha inválida ou um usuário ja existente, ele será notificado. Caso ocorra tudo certo no processo de cadastro, ele irá receber um toast informado que o cadastro foi realizado com sucesso.
 
 # Licença
 
