@@ -71,6 +71,7 @@ CineFlix utiliza a API de filmes (https://stackmobile.com.br/filmes) disponibili
 
 ### Tela Principal
 <img src="screenshots/feature 2.gif" width="25%"/>
+<img src="screenshots/feature 1.gif" width="25%"/>
 
 Pagina Principal do aplicativo, onde o usuário terá acesso a todos os filmes disponíveis e suas respectivas categorias. Enquanto a requisição a API é realizada, o usuário é informado do carregamento da tela e assim que finalizado, os filmes se tornam disponíveis.
 
