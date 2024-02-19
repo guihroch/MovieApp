@@ -55,7 +55,7 @@
 
 ****CineFlix**** utiliza a arquitetura MVC (Model - View - Controller) que é um padrão de projeto de software que separa a interface do usuário (View) e das regras de negócio e dados (Model) usando um mediador (Controller) para conectar o modelo à view. 
 </br></br>
-<img alt="screenshots" width="80%" src="screenshots/mvc_arquitetura_novo.png"/>
+<img alt="screenshots" width="80%" src="screenshots/mvc_atualizado.png"/>
 <br>
 
 ## API de terceiros
@@ -87,7 +87,7 @@ Nessa feature o usuário precisa digitar um email válido(filtrado através do r
 # Licença
 
 ```xml
-           Copyright [2023] [Guilherme Henrique Martins Rocha]
+        Copyright [2023] [Guilherme Henrique Martins Rocha]
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
